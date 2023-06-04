@@ -1,0 +1,34 @@
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: localhost:4317
+
+processors:
+  batch:
+    timeout: 5s
+    send_batch_size: 10000
+
+exporters:
+  clickhouse:
+    endpoint: tcp://127.0.0.1:9000?dial_timeout=10s&compress=lz4
+    username: default
+    database: otel
+    ttl_days: 1
+    traces_table_name: otel_traces
+    timeout: 5s
+    retry_on_failure:
+      enabled: true
+      initial_interval: 5s
+      max_interval: 30s
+      max_elapsed_time: 300s
+
+service:
+  pipelines:
+    traces:
+      receivers:
+      - otlp
+      processors:
+      - batch
+      exporters:
+      - clickhouse
