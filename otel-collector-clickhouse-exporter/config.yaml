@@ -2,7 +2,7 @@ receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: 147.28.186.207:4317
+        endpoint: localhost:4317
 
 processors:
   batch:
@@ -11,7 +11,7 @@ processors:
 
 exporters:
   prometheus:
-    endpoint: 147.28.186.207:1234
+    endpoint: localhost:1234
   clickhouse:
     endpoint: tcp://147.28.186.207:9000?dial_timeout=10s&compress=lz4
     sending_queue:
