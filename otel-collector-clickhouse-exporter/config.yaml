@@ -17,11 +17,6 @@ exporters:
     ttl_days: 1
     traces_table_name: otel_traces
     timeout: 5s
-    retry_on_failure:
-      enabled: true
-      initial_interval: 5s
-      max_interval: 30s
-      max_elapsed_time: 300s
     sending_queue:
       queue_size: 10000
 
