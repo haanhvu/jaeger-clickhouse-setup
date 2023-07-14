@@ -22,6 +22,8 @@ exporters:
       initial_interval: 5s
       max_interval: 30s
       max_elapsed_time: 300s
+    sending_queue:
+      queue_size: 10000
 
 service:
   pipelines:
