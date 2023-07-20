@@ -1,6 +1,6 @@
 Run OpenTelemetry Collector with Docker:
 
-`docker run --rm --network host --name otel -p 147.28.187.147:4317:4317 -p 147.28.187.147:8888:8888 -v $(pwd)/config.yaml:/etc/otelcol-contrib/config.yaml otel/opentelemetry-collector-contrib:0.78.0`
+`docker run --rm --network host --name otel -p 139.178.86.245:4317:4317 -p 139.178.86.245:8888:8888 -v $(pwd)/config.yaml:/etc/otelcol-contrib/config.yaml otel/opentelemetry-collector-contrib:0.78.0`
 
 When OpenTelemetry Collector has been ready, use OpenTelemetry Tracegen to generate traces with either duration or number of traces:
 
