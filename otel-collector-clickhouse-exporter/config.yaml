@@ -2,7 +2,7 @@ receivers:
   otlp:
     protocols:
       grpc:
-        endpoint: 147.28.186.47:4317
+        endpoint: 145.40.102.147:4317
 
 processors:
   batch:
